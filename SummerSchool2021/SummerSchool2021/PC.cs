@@ -29,6 +29,8 @@ namespace SummerSchool2021
             this.videoMaker = videoMaker;
         }
 
+       
+
         public PC(string motherboardName, string cpuMake, string ramSize)
         {
             this.motherboardName = motherboardName;
@@ -55,5 +57,6 @@ namespace SummerSchool2021
             Console.WriteLine("RAM f" + this.ramFreq);
             Console.WriteLine("RAM s" + this.ramSize);
         }
+
     }
 }

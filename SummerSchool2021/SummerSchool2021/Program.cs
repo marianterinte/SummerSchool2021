@@ -8,8 +8,7 @@ namespace SummerSchool2021
 {
     public class Program
     {
-       
-
+        //TODO refator in builder.
         static void Main(string[] args)
         {
             Console.WriteLine("PC type:");
@@ -22,7 +21,6 @@ namespace SummerSchool2021
                         var pc = new PC("Asus SX122", "Asus", "AMD", "4500", "2600", "3GB", "", "", "", "");
                         pc.Display();
                         break;
-
                     }
 
                 case "racheta_basic":
@@ -30,7 +28,6 @@ namespace SummerSchool2021
                         var pc = new PC("Asus SX122", "Asus", "AMD", "4500", "2600", "3GB", "", "", "", "");
                         pc.DisplayBasic();
                         break;
-
                     }
 
                 case "basic":
