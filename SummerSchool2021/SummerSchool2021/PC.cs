@@ -29,6 +29,22 @@ namespace SummerSchool2021
             this.videoMaker = videoMaker;
         }
 
+        public PC(string motherboardName, string cpuMake, string ramSize)
+        {
+            this.motherboardName = motherboardName;
+            this.cpuMake = cpuMake;
+            this.ramSize = ramSize;
+        }
+
+        internal void DisplayBasic()
+        {
+            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("PC Specs");
+            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("Motherboard:" + this.motherboardName);
+            Console.WriteLine("CPU" + this.cpuMake );
+            Console.WriteLine("RAM s" + this.ramSize);
+        }
         internal void Display()
         {
             Console.WriteLine("-------------------------------------------------------");
