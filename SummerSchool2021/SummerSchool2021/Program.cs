@@ -11,22 +11,24 @@ namespace SummerSchool2021
 
             switch (name)
             {
-                case "Iphone8":
+                case "racheta":
                     {
-                        var phone = new Phone("Iphone", "8", " display retina 6 inch", "2400mh");
-                        phone.Display();
+                        var pc = new PC("Asus SX122", "Asus", "AMD", "4500", "", "", "", "", "","");
+                        pc.Display();
                         break;
 
                     }
-                case "S10":
+                case "basic":
                     {
-                        var phone = new Phone("Samsung", "10", " display 6 inch", "2500mh");
-                        phone.Display();
+                        var pc = new PC("Asus SX122", "Asus", "INTEL", "2500", "", "", "", "", "", "");
+                        pc.Display();
                         break;
                     }
+                //...
+
                 default:
                     {
-                        Console.WriteLine("Phone not found");
+                        Console.WriteLine("PC configuration not found");
                         break;
                     }
             }
