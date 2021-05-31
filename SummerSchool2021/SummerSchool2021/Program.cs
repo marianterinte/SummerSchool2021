@@ -11,7 +11,7 @@ namespace SummerSchool2021
 
             if (name == "Iphone8")
             {
-                var phone = new Phone("Iphone", "8", "");
+                var phone = new Phone("Iphone", "8", " display retina 6 inch");
                 phone.Display();
             }
             else

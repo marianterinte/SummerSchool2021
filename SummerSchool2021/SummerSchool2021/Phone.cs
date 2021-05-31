@@ -20,9 +20,9 @@ namespace SummerSchool2021
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("Phone Specs");
             Console.WriteLine("-------------------------------------------------------");
-            Console.WriteLine("Iphone 8");
-            Console.WriteLine("Processor: xxxx");
-            Console.WriteLine("Display 8 inch");
+            Console.WriteLine(this.make);
+            Console.WriteLine(this.model);
+            Console.WriteLine(this.display);
         }
     }
 }
