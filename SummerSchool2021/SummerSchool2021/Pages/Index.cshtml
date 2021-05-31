@@ -1,0 +1,15 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Summer School";
+}
+
+ @foreach( var text in Model.texte)
+            {
+<div class="card">
+    <div class="container">
+        <h4><b>@text</b></h4>
+        <p>details</p>
+    </div>
+</div>
+            }
