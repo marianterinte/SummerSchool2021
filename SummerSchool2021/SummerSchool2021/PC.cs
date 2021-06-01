@@ -5,7 +5,7 @@ namespace SummerSchool2021
     internal class PC
     {
         private string motherboardName;
-        private string motherMaker;
+        private string motherboardMaker;
         private string cpuMake;
         private string cpuFreq;
         private string ramFreq;
@@ -15,47 +15,36 @@ namespace SummerSchool2021
         private string videoType;
         private string videoMaker;
 
-        public PC(string motherboardName, string motherMaker, string cpuMake, string cpuFreq, string ramFreq, string ramSize, string storageSize, string storageType, string videoType, string videoMaker)
-        {
-            this.motherboardName = motherboardName;
-            this.motherMaker = motherMaker;
-            this.cpuMake = cpuMake;
-            this.cpuFreq = cpuFreq;
-            this.ramFreq = ramFreq;
-            this.ramSize = ramSize;
-            this.storageSize = storageSize;
-            this.storageType = storageType;
-            this.videoType = videoType;
-            this.videoMaker = videoMaker;
-        }
-
-       
-
-        public PC(string motherboardName, string cpuMake, string ramSize)
-        {
-            this.motherboardName = motherboardName;
-            this.cpuMake = cpuMake;
-            this.ramSize = ramSize;
-        }
+        public string MotherboardName { get => motherboardName; set => motherboardName = value; }
+        public string MotherboardMaker { get => motherboardMaker; set => motherboardMaker = value; }
+        public string CpuMake { get => cpuMake; set => cpuMake = value; }
+        public string CpuFreq { get => cpuFreq; set => cpuFreq = value; }
+        public string RamFreq { get => ramFreq; set => ramFreq = value; }
+        public string RamSize { get => ramSize; set => ramSize = value; }
+        public string StorageSize { get => storageSize; set => storageSize = value; }
+        public string StorageType { get => storageType; set => storageType = value; }
+        public string VideoType { get => videoType; set => videoType = value; }
+        public string VideoMaker { get => videoMaker; set => videoMaker = value; }
 
         internal void DisplayBasic()
         {
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("PC Specs");
             Console.WriteLine("-------------------------------------------------------");
-            Console.WriteLine("Motherboard:" + this.motherboardName);
-            Console.WriteLine("CPU" + this.cpuMake );
-            Console.WriteLine("RAM s" + this.ramSize);
+            Console.WriteLine("Motherboard:" + this.MotherboardName);
+            Console.WriteLine("CPU" + this.CpuMake );
+            Console.WriteLine("RAM s" + this.RamSize);
         }
+
         internal void Display()
         {
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("PC Specs");
             Console.WriteLine("-------------------------------------------------------");
-            Console.WriteLine("Motherboard:" + this.motherboardName + " " + this.motherMaker);
-            Console.WriteLine("CPU" + this.cpuMake + " " + this.cpuFreq);
-            Console.WriteLine("RAM f" + this.ramFreq);
-            Console.WriteLine("RAM s" + this.ramSize);
+            Console.WriteLine("Motherboard:" + this.MotherboardName + " " + this.MotherboardMaker);
+            Console.WriteLine("CPU" + this.CpuMake + " " + this.CpuFreq);
+            Console.WriteLine("RAM f" + this.RamFreq);
+            Console.WriteLine("RAM s" + this.RamSize);
         }
 
     }

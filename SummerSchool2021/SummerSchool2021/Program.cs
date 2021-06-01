@@ -13,30 +13,44 @@ namespace SummerSchool2021
         {
             Console.WriteLine("PC type:");
             var name = Console.ReadLine();
+            var pc = new PC();
 
             switch (name)
             {
                 case "racheta":
                     {
-                        var pc = new PC("Asus SX122", "Asus", "AMD", "4500", "2600", "3GB", "", "", "", "");
+                        pc.MotherboardName = "Asus SX122";
+                        pc.MotherboardMaker = "Asus";
+                        pc.CpuMake = "AMD";
+                        pc.CpuFreq = "4500";
+                        pc.RamFreq = "2600";
+                        pc.RamSize = "3GB";
+
                         pc.Display();
                         break;
                     }
 
                 case "racheta_basic":
                     {
-                        var pc = new PC("Asus SX122", "Asus", "AMD", "4500", "2600", "3GB", "", "", "", "");
+                        pc.MotherboardName = "Asus SX122";
+                        pc.MotherboardMaker = "Asus";
+                        pc.CpuMake = "AMD";
+
                         pc.DisplayBasic();
                         break;
                     }
 
                 case "basic":
                     {
-                        var pc = new PC("Asus SX122", "Asus", "INTEL", "2500", "", "", "", "", "", "");
+                        pc.MotherboardName = "Asus SX122";
+                        pc.MotherboardMaker = "Asus";
+                        pc.CpuMake = "INTEL";
+                        pc.CpuMake = "AMD";
+                        pc.CpuFreq = "2500";
+
                         pc.Display();
                         break;
                     }
-                //...
 
                 default:
                     {
