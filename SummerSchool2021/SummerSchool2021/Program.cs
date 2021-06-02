@@ -7,7 +7,8 @@ namespace SummerSchool2021
     public class Program
     {
         //#Get rid of this constuctor.
-        //
+        ///Use the builder pattern.
+        ///
         static void Main(string[] args)
         {
             Console.WriteLine("PC type:");
@@ -19,46 +20,23 @@ namespace SummerSchool2021
             Console.WriteLine("Motherboard:");
             var motherboardMake = Console.ReadLine();
 
-            var pc = new PC();
+            var pcBuilder = new PCBuilder();
 
             if (pcType == "performance")
             {
-                pc.CpuMake = processorMake;
-                pc.MotherboardMaker = motherboardMake;
-                if (pc.MotherboardMaker == "Asus")
-                {
-                    pc.MotherboardName = "Asus SX122";
-                }
-                else if(pc.MotherboardMaker == "MSI")
-                {
-                    pc.MotherboardName = "MSI MSX3x1";
-                }
-
-                pc.CpuFreq = "4500";
-                pc.RamFreq = "3600";
-                pc.RamSize = "32GB";
+                pcBuilder.CreatePerformancePC(processorMake, motherboardMake);
             }
             else if (pcType == "medium")
             {
-                pc.CpuMake = processorMake;
-                pc.MotherboardMaker = motherboardMake;
-               
-                if (pc.MotherboardMaker == "Asus")
-                {
-                    pc.MotherboardName = "Asus MED3302";
-                }
-                else if (pc.MotherboardMaker == "MSI")
-                {
-                    pc.MotherboardName = "MSI_MED21";
-                }
-                
-                pc.CpuFreq = "4500";
-                pc.RamFreq = "3600";
-                pc.RamSize = "32GB";
+                pcBuilder.CreateMediumPC(processorMake, motherboardMake);
+            }
+            else if (pcType == "budget")
+            {
+                pcBuilder.CreateBudgetPC(processorMake, motherboardMake);
             }
 
+            var pc = pcBuilder.GetPC();
             pc.Display();
-
         }
     }
 }

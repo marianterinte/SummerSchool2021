@@ -2,7 +2,7 @@
 
 namespace SummerSchool2021
 {
-    internal class PC
+    public class PC
     {
         private string motherboardName;
         private string motherboardMaker;
@@ -32,7 +32,7 @@ namespace SummerSchool2021
             Console.WriteLine("PC Specs");
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("Motherboard:" + this.MotherboardName);
-            Console.WriteLine("CPU" + this.CpuMake );
+            Console.WriteLine("CPU" + this.CpuMake);
             Console.WriteLine("RAM s" + this.RamSize);
         }
 
