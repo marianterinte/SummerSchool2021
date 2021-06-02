@@ -20,19 +20,23 @@ namespace SummerSchool2021
             Console.WriteLine("Motherboard:");
             var motherboardMake = Console.ReadLine();
 
-            var pcBuilder = new PCBuilder();
+            PCBuilder pcBuilder;
 
             if (pcType == "performance")
             {
-                pcBuilder.CreatePerformancePC(processorMake, motherboardMake);
+                pcBuilder = new PerformancePCBuilder();
+                pcBuilder.CreatePC(processorMake, motherboardMake);
             }
             else if (pcType == "medium")
             {
-                pcBuilder.CreateMediumPC(processorMake, motherboardMake);
+                pcBuilder = new MediumPCBuilder();
+                pcBuilder.CreatePC(processorMake, motherboardMake);
+
             }
             else if (pcType == "budget")
             {
-                pcBuilder.CreateBudgetPC(processorMake, motherboardMake);
+                pcBuilder = new BudgetPCBuilder();
+                pcBuilder.CreatePC(processorMake, motherboardMake);
             }
 
             var pc = pcBuilder.GetPC();
