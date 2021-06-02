@@ -10,7 +10,7 @@ namespace SummerSchool2021
             return pc;
         }
 
-        public virtual void CreatePC(string processorMake, string motherboardMake)
+        public virtual void BuildPC(string processorMake, string motherboardMake)
         {
             pc = new PC();
 

@@ -8,7 +8,7 @@ namespace SummerSchool2021
     {
         //#Get rid of this constuctor.
         ///Use the builder pattern.
-        ///
+        // 
         static void Main(string[] args)
         {
             Console.WriteLine("PC type:");
@@ -35,7 +35,7 @@ namespace SummerSchool2021
                 pcBuilder = new BudgetPCBuilder();
             }
 
-            pcBuilder.CreatePC(processorMake, motherboardMake);
+            pcBuilder.BuildPC(processorMake, motherboardMake);
             var pc = pcBuilder.GetPC();
             pc.Display();
         }
