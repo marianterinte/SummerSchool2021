@@ -1,63 +1,64 @@
 ﻿//1 Implemented
 //2 Implemented
-
-
 using System;
 
 namespace SummerSchool2021
 {
     public class Program
     {
-        //TODO refator in builder.
+        //#Get rid of this constuctor.
+        //
         static void Main(string[] args)
         {
             Console.WriteLine("PC type:");
-            var name = Console.ReadLine();
+            var pcType = Console.ReadLine();
+
+            Console.WriteLine("Processor:");
+            var processorMake = Console.ReadLine();
+
+            Console.WriteLine("Motherboard:");
+            var motherboardMake = Console.ReadLine();
+
             var pc = new PC();
 
-            switch (name)
+            if (pcType == "performance")
             {
-                case "racheta":
-                    {
-                        pc.MotherboardName = "Asus SX122";
-                        pc.MotherboardMaker = "Asus";
-                        pc.CpuMake = "AMD";
-                        pc.CpuFreq = "4500";
-                        pc.RamFreq = "2600";
-                        pc.RamSize = "3GB";
+                pc.CpuMake = processorMake;
+                pc.MotherboardMaker = motherboardMake;
+                if (pc.MotherboardMaker == "Asus")
+                {
+                    pc.MotherboardName = "Asus SX122";
+                }
+                else if(pc.MotherboardMaker == "MSI")
+                {
+                    pc.MotherboardName = "MSI MSX3x1";
+                }
 
-                        pc.Display();
-                        break;
-                    }
-
-                case "racheta_basic":
-                    {
-                        pc.MotherboardName = "Asus SX122";
-                        pc.MotherboardMaker = "Asus";
-                        pc.CpuMake = "AMD";
-
-                        pc.DisplayBasic();
-                        break;
-                    }
-
-                case "basic":
-                    {
-                        pc.MotherboardName = "Asus SX122";
-                        pc.MotherboardMaker = "Asus";
-                        pc.CpuMake = "INTEL";
-                        pc.CpuMake = "AMD";
-                        pc.CpuFreq = "2500";
-
-                        pc.Display();
-                        break;
-                    }
-
-                default:
-                    {
-                        Console.WriteLine("PC configuration not found");
-                        break;
-                    }
+                pc.CpuFreq = "4500";
+                pc.RamFreq = "3600";
+                pc.RamSize = "32GB";
             }
+            else if (pcType == "medium")
+            {
+                pc.CpuMake = processorMake;
+                pc.MotherboardMaker = motherboardMake;
+               
+                if (pc.MotherboardMaker == "Asus")
+                {
+                    pc.MotherboardName = "Asus MED3302";
+                }
+                else if (pc.MotherboardMaker == "MSI")
+                {
+                    pc.MotherboardName = "MSI_MED21";
+                }
+                
+                pc.CpuFreq = "4500";
+                pc.RamFreq = "3600";
+                pc.RamSize = "32GB";
+            }
+
+            pc.Display();
+
         }
     }
 }
