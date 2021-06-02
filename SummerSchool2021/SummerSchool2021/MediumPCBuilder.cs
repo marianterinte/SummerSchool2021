@@ -9,6 +9,15 @@
             pc.CpuFreq = "3500";
             pc.RamFreq = "2600";
             pc.RamSize = "16GB";
+
+            if (pc.MotherboardMaker == "Asus")
+            {
+                pc.MotherboardName = "Asus MED2333";
+            }
+            else if (pc.MotherboardMaker == "MSI")
+            {
+                pc.MotherboardName = "MSI_MED33302";
+            }
         }
     }
 }

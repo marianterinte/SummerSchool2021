@@ -9,6 +9,15 @@
             pc.CpuFreq = "2500";
             pc.RamFreq = "1600";
             pc.RamSize = "4GB";
+
+            if (pc.MotherboardMaker == "Asus")
+            {
+                pc.MotherboardName = "Asus Budg3302";
+            }
+            else if (pc.MotherboardMaker == "MSI")
+            {
+                pc.MotherboardName = "MSI_Budg3302";
+            }
         }
     }
 }

@@ -16,14 +16,7 @@ namespace SummerSchool2021
 
             pc.CpuMake = processorMake;
             pc.MotherboardMaker = motherboardMake;
-            if (pc.MotherboardMaker == "Asus")
-            {
-                pc.MotherboardName = "Asus Budg3302";
-            }
-            else if (pc.MotherboardMaker == "MSI")
-            {
-                pc.MotherboardName = "MSI_Budg3302";
-            }
+           
         }
     }
 }
