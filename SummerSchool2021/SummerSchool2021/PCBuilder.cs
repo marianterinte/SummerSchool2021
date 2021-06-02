@@ -1,7 +1,6 @@
-﻿
-namespace SummerSchool2021
+﻿namespace SummerSchool2021
 {
-    public class PCBuilder
+    public abstract class PCBuilder
     {
         protected PC pc;
 
@@ -13,10 +12,14 @@ namespace SummerSchool2021
         public virtual void BuildPC(string processorMake, string motherboardMake)
         {
             pc = new PC();
-
             pc.CpuMake = processorMake;
             pc.MotherboardMaker = motherboardMake;
-           
+            SetupMotherboard();
+            SetupMemory();
         }
+
+        protected abstract void SetupMotherboard();
+        protected abstract void SetupMemory();
+
     }
 }

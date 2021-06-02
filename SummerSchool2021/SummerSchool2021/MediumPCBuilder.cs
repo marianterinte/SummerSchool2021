@@ -2,14 +2,15 @@
 {
     public class MediumPCBuilder : PCBuilder
     {
-        public override void BuildPC(string cpuMake, string motherboardMake)
+        protected override void SetupMemory()
         {
-            base.BuildPC(cpuMake, motherboardMake);
-
             pc.CpuFreq = "3500";
             pc.RamFreq = "2600";
             pc.RamSize = "16GB";
+        }
 
+        protected override void SetupMotherboard()
+        {
             if (pc.MotherboardMaker == "Asus")
             {
                 pc.MotherboardName = "Asus MED2333";

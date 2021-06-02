@@ -2,13 +2,15 @@
 {
     public class BudgetPCBuilder : PCBuilder
     {
-        public override void BuildPC(string cpuMake, string motherboardMake)
+        protected override void SetupMemory()
         {
-            base.BuildPC(cpuMake, motherboardMake);
-           
             pc.CpuFreq = "2500";
             pc.RamFreq = "1600";
             pc.RamSize = "4GB";
+        }
+
+        protected override void SetupMotherboard()
+        {
 
             if (pc.MotherboardMaker == "Asus")
             {
