@@ -25,20 +25,17 @@ namespace SummerSchool2021
             if (pcType == "performance")
             {
                 pcBuilder = new PerformancePCBuilder();
-                pcBuilder.CreatePC(processorMake, motherboardMake);
             }
             else if (pcType == "medium")
             {
                 pcBuilder = new MediumPCBuilder();
-                pcBuilder.CreatePC(processorMake, motherboardMake);
-
             }
-            else if (pcType == "budget")
+            else
             {
                 pcBuilder = new BudgetPCBuilder();
-                pcBuilder.CreatePC(processorMake, motherboardMake);
             }
 
+            pcBuilder.CreatePC(processorMake, motherboardMake);
             var pc = pcBuilder.GetPC();
             pc.Display();
         }
