@@ -23,18 +23,7 @@ namespace SummerSchool2021
             Console.WriteLine("Display:");
             var display = Console.ReadLine();
 
-            PCBuilder pcBuilder;
-
-            if (pcType == "performance")
-                pcBuilder = new PerformancePCBuilder();
-            else if (pcType == "medium")
-                pcBuilder = new MediumPCBuilder();
-            else
-                pcBuilder = new BudgetPCBuilder();
-
-            pcBuilder.BuildPC(processorMake, motherboardMake);
-            var pc = pcBuilder.GetPC();
-
+           
             //Separate the repsonsability apply SRP.
             IPCFormatter pcFormatter;
 
@@ -44,8 +33,11 @@ namespace SummerSchool2021
                 pcFormatter = new FullPCFormatter();
             else
                 pcFormatter = new IdPCFormatter();
-            
-            pcFormatter.Display(pc);
+
+            //Apply strategy pattern part 2.
+            var pcConfiguration = new PCConfigurationService(pcType, processorMake, motherboardMake);
+            pcConfiguration.SetDisplayStrategy(pcFormatter);
+            pcConfiguration.Show();
         }
     }
 }
