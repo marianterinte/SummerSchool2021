@@ -19,6 +19,7 @@
             pc.CpuFreq = "4500";
             pc.RamFreq = "3600";
             pc.RamSize = "32GB";
+            // all other top rated pc specs.
         }
     }
 }

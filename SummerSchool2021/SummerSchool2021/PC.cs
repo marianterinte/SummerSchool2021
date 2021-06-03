@@ -24,9 +24,8 @@ namespace SummerSchool2021
         public string StorageSize { get => storageSize; set => storageSize = value; }
         public string StorageType { get => storageType; set => storageType = value; }
         public string VideoType { get => videoType; set => videoType = value; }
-        public string VideoMaker { get => videoMaker; set => videoMaker = value; }
 
-        internal void DisplayBasic()
+        internal void DisplayMinimal()
         {
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("PC Specs");
@@ -36,7 +35,7 @@ namespace SummerSchool2021
             Console.WriteLine("RAM s" + this.RamSize);
         }
 
-        internal void Display()
+        internal void DisplayFull()
         {
             Console.WriteLine("-------------------------------------------------------");
             Console.WriteLine("PC Specs");
@@ -47,5 +46,11 @@ namespace SummerSchool2021
             Console.WriteLine("RAM s" + this.RamSize);
         }
 
+        internal void DisplayId()
+        {
+           //TODO
+        }
+
+        public string VideoMaker { get => videoMaker; set => videoMaker = value; }
     }
 }
