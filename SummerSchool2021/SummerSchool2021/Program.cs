@@ -27,12 +27,18 @@ namespace SummerSchool2021
             //Separate the repsonsability apply SRP.
             IPCFormatter pcFormatter;
 
-            if (display == "minimal")
-                pcFormatter = new MinimalPCFormatter();
-            else if (display == "full")
-                pcFormatter = new FullPCFormatter();
-            else
-                pcFormatter = new IdPCFormatter();
+            switch (display)
+            {
+                case "minimal":
+                    pcFormatter = new MinimalPCFormatter();
+                    break;
+                case "full":
+                    pcFormatter = new FullPCFormatter();
+                    break;
+                default:
+                    pcFormatter = new IdPCFormatter();
+                    break;
+            }
 
             //Apply strategy pattern part 2.
             var pcConfiguration = new PCConfigurationService(pcType, processorMake, motherboardMake);
