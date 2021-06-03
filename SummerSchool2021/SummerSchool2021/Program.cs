@@ -19,7 +19,7 @@ namespace SummerSchool2021
 
             Console.WriteLine("Motherboard:");
             var motherboardMake = Console.ReadLine();
-            
+
             Console.WriteLine("Display:");
             var display = Console.ReadLine();
 
@@ -35,21 +35,21 @@ namespace SummerSchool2021
             pcBuilder.BuildPC(processorMake, motherboardMake);
             var pc = pcBuilder.GetPC();
 
+            //Separate the repsonsability apply SRP.
+            PCFormatter pcFormatter = new PCFormatter();
 
-            if (display=="minimal")
+            if (display == "minimal")
             {
-                pc.DisplayMinimal();
-
+                pcFormatter.DisplayMinimal(pc);
             }
             else if (display == "full")
             {
-                pc.DisplayFull();
+                pcFormatter.DisplayFull(pc);
             }
             else
             {
-                pc.DisplayId();
+                pcFormatter.DisplayId(pc);
             }
-          
         }
     }
 }
