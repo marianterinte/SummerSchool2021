@@ -4,7 +4,7 @@ using System;
 
 namespace SummerSchool2021
 {
-    public class Program
+    public partial class Program
     {
         //#Get rid of this constuctor.
         ///Use the builder pattern.
@@ -36,20 +36,16 @@ namespace SummerSchool2021
             var pc = pcBuilder.GetPC();
 
             //Separate the repsonsability apply SRP.
-            PCFormatter pcFormatter = new PCFormatter();
+            IPCFormatter pcFormatter;
 
             if (display == "minimal")
-            {
-                pcFormatter.DisplayMinimal(pc);
-            }
+                pcFormatter = new MinimalPCFormatter();
             else if (display == "full")
-            {
-                pcFormatter.DisplayFull(pc);
-            }
+                pcFormatter = new FullPCFormatter();
             else
-            {
-                pcFormatter.DisplayId(pc);
-            }
+                pcFormatter = new IdPCFormatter();
+            
+            pcFormatter.Display(pc);
         }
     }
 }
