@@ -23,24 +23,11 @@ namespace SummerSchool2021
             Console.WriteLine("Display:");
             var display = Console.ReadLine();
 
-           
-            //Separate the repsonsability apply SRP.
-            IPCFormatter pcFormatter;
 
-            switch (display)
-            {
-                case "minimal":
-                    pcFormatter = new MinimalPCFormatter();
-                    break;
-                case "full":
-                    pcFormatter = new FullPCFormatter();
-                    break;
-                default:
-                    pcFormatter = new IdPCFormatter();
-                    break;
-            }
+            //Applied factory method pattern.
+            PCFormatterFactory pcFormatterFactory = new PCFormatterFactory(display);
+            IPCFormatter pcFormatter = pcFormatterFactory.GetFormat();
 
-            //Apply strategy pattern part 2.
             var pcConfiguration = new PCConfigurationService(pcType, processorMake, motherboardMake);
             pcConfiguration.SetDisplayStrategy(pcFormatter);
             pcConfiguration.Show();
