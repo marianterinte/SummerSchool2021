@@ -1,8 +1,6 @@
 ﻿//1 Implemented
 //2 Implemented
 
-using System;
-
 namespace SummerSchool2021
 {
     internal class PCConfigurationService
@@ -10,8 +8,8 @@ namespace SummerSchool2021
         private string pcType;
         private string processorMake;
         private string motherboardMake;
-        private string display;
         private IPCFormatter pcFormatter;
+     
         public PCConfigurationService(string pcType, string processorMake, string motherboardMake)
         {
             this.pcType = pcType;
